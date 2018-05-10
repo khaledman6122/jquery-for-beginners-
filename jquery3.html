@@ -1,0 +1,141 @@
+<!doctype HTML>
+<html>
+    <head>
+    <meta charset="utf-8">    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+    </head>
+    
+    <style>
+         
+        p{
+              margin-top:50px; width:auto;
+            background-color: dodgerblue; color: white;
+         }
+         
+        #specific2{border: 5px solid red;}
+    </style>
+    
+    <body>
+            
+             <p id="p01">this is the p01 paragraph</p>
+            <p id="p02">this is the p02 paragraph</p>
+        
+            
+            <p id="p03">prepend alot of things at once</p>
+            <p id="p04">append alot of things at once</p>
+        
+            
+            <div style="width:500px;height:400px;background-color: darksalmon">
+                <p id="parag">hello world ...i'm parag</p>
+                <p id="parag2">hello world ...i'm parag2</p>
+                <button id="btn01">parag2</button>
+                <button id="btn02">parag</button>
+             </div>
+        
+        <p id="specific">click on any paragraph to remove this specific paragraph</p>
+        
+<p id="p05">click to empty<span id="specific2">specific2</span></p>
+      
+    </body>
+    
+    
+    <script>
+        
+        
+    
+      $(function(){
+          
+
+    //prepend: put something at the top and inside the boundries of an element
+    //append:put something at the bottom and inside the boundries of an element
+
+    //before: make an independent element at the top and outside the boundries of an element
+    //after:make an independent element at the bottom and outside the boundries of an element
+
+
+
+
+
+
+    /*  
+    $('#p01').prepend('<p>this is prepend</p>')  //
+
+    $('#p01').before('<p>this is before p01</p>')
+    */
+
+
+
+    /*
+    $('#p02').append('<p>this is append</p>')
+
+    $('#p02').after('<p>this is after p02</p>')
+    */
+
+
+
+    //$('#p03').prepend("<p>this is prepend paragraph</p>","<p>prepend a second paragraph</p>")  
+
+
+
+
+    /*
+    $('#p04').append("<p>this is append paragraph</p>","<p>append a second paragraph</p>")  
+    */    
+
+
+
+
+
+    //remove : deletes an entire element and it's workflow and it's style
+    //empty : clear content of an element but still holds it's place on the page
+
+    //we can also add selectors inside remove/empty to choose a specific element
+
+
+
+
+    //$("#btn01").on('click', function(){ $('#parag2').remove(); }    )
+
+
+
+
+
+
+
+
+    //$("#btn02").on('click', function(){ $('#parag').empty(); }    )
+
+
+
+
+      /*    
+    //remove will deletes the entire element also the style and workflow
+    $('p').on('click',function(){$('p').remove('#specific')})
+    */
+
+          
+    /*
+    //as we saied before empty will makes the content disappear but the style and workflow still availlable
+    $('#p05').on('click',function(){$('span').empty('#specific2')})
+    */
+
+
+
+
+  
+          
+          
+      });
+         
+    
+    
+    </script>
+    
+    
+    
+    
+    
+    
+    
+</html>

@@ -1,0 +1,164 @@
+<!doctype HTML>
+<html>
+    <head>
+<meta charset="utf-8">    
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    </head>
+ 
+    <style>
+        div{
+        margin: auto;
+        margin:100px;
+        padding: 20px;
+        background-color: #a7d5fd   ;
+        font-size: 25px;    
+    }
+    
+    </style>
+    <body>
+    
+        <div id="d1">
+            load directly in here using load method
+        </div>
+        
+        
+        <div id="d2">
+            change this text by DOM but get the file from server with get method  
+        </div>
+    </body>
+
+    
+    <script>
+    
+         $(function(){
+             
+             
+             
+             
+         //load : directly loads ajax response to an element
+         //load : came with a callback function that include responseText,requestStatus,xhr (they are just names we created it can be anything you want but don't forget the order)
+          // responseText  : our responseText  
+          // requestStatus : success / error
+          // xhr.status    :200 if success / 404 not found
+          // xhr.state     : function will be displayed   
+            
+             
+             
+            
+             
+             
+             /*
+             $('#d1').on('click',function(){
+ 
+            //load without call back function
+                 
+              $('#d1').load('https://cors-anywhere.herokuapp.com/https://gist.githubusercontent.com/khaledman6122/79be36419c8c1a1af2cb06d4f33dfb1e/raw/9eca6f44b91de1f9686f06252963c224dc3ca3fd/hello.txt');
+              })
+          })
+            */
+        
+                                    
+                                    
+                       
+                                      
+                                    
+                                    
+         /*
+         $('#d1').on('click',function(){
+             
+            //load with call back function
+             
+             $('#d1').load('https://cors-anywhere.herokuapp.com/https://gist.githubusercontent.com/khaledman6122/79be36419c8c1a1af2cb06d4f33dfb1e/raw/9eca6f44b91de1f9686f06252963c224dc3ca3fd/hello.txt',function(responseText,requestStatus,xhr){
+                 if(requestStatus=='success') alert('text loaded successfully');
+                 if(requestStatus=='error')  alert('error loading text ');
+                 //console.log(xhr.state);  output: function
+                 console.log(xhr.status);   //output: 200 if success otherwise 404
+                 
+             })
+         })
+         */
+         
+         
+         
+          
+         
+         
+          
+         
+        //get : loads ajax response but it keeps it until we need it later
+        //get : briefly for indirect load      
+        //get : came with callBack function that include responseText,requestStatus,xhr (they are just names we created it can be anything you want but don't forget the order)
+         
+         
+           
+           
+          
+         
+         
+        
+         //get without callBack function
+         /*
+         $.get('https://cors-anywhere.herokuapp.com/https://gist.githubusercontent.com/khaledman6122/79be36419c8c1a1af2cb06d4f33dfb1e/raw/9eca6f44b91de1f9686f06252963c224dc3ca3fd/hello.txt',
+              function(responseText,requestStatus,xhr){
+             console.log(responseText);     //retrive and display text 
+             console.log(requestStatus)     //success or error
+             console.log(xhr.status)        //200 or 404
+         }
+              )
+         */
+         
+         
+         
+         
+          
+         
+          
+         
+         //get with callBack function
+         /*
+         $.get('https://cors-anywhere.herokuapp.com/https://gist.githubusercontent.com/khaledman6122/79be36419c8c1a1af2cb06d4f33dfb1e/raw/9eca6f44b91de1f9686f06252963c224dc3ca3fd/hello.txt',
+              function(responseText,requestStatus,xhr) { func1(responseText); }
+              )  
+         
+         function func1(x){
+             $('#d2').on('click',function(){
+                   $('#d2').text(x);
+             })
+         }
+          */
+         
+          
+         
+         
+          
+         
+         
+        
+          
+         
+         
+          
+         
+         
+          
+         
+         
+          
+         
+         
+          
+         
+         
+          
+         
+         
+           })
+        
+    </script>
+
+
+
+
+
+
+</html>

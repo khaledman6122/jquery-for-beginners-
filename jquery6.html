@@ -1,0 +1,354 @@
+<!doctype HTML>
+<html>
+    <head>
+<meta charset="utf-8">    
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    </head>
+
+    <style>
+        body{
+            background-color: #ccc;
+        }
+        .container{
+            width: 600px;
+            height: 600px;
+        }
+        .container *{
+            background-color: dodgerblue;
+            color:black;
+            font-size: 18px;
+            border:2px solid #fff;
+            border-collapse: no-collapse;
+            padding: 5px;
+            margin: 15px;
+            display: block;
+        }
+    </style>
+    
+    <body>
+        <div class="container">
+            <div id="div1">div1
+                <ul> ul
+                <li> li
+                    <span id="span1">span1
+                        <p>p1</p>
+                        <span>span2</span>
+                        <h2 id="specific1">h2 specific1</h2>
+                        <h3>h3</h3>
+                        <p>p2</p>
+                    </span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        
+        
+        
+        
+        
+        
+        
+        <div class="container">
+                 <span id='parent1'>span
+                    <p id="only">the only children</p>
+                </span>
+
+                <a href="" id='parent2'> a 'anchor'
+                    <p id="only">the only children</p>
+                </a>
+
+                <div id='parent3'> div
+                    <p id="only">the only children</p>
+                </div>
+         </div>
+        
+      
+        
+        <div class="container">
+                 <span id='parentX'> 
+                    <a href="">i'm a anchor</a>
+                </span>
+
+                <a href="" id='parentX'> 
+                    <p>i'm a paragraph</p>
+                </a>
+
+                <div id='parentX'> 
+                    <div>i'm a div </div>
+                </div>
+         </div>
+        
+      
+        
+        
+        
+        
+        
+    </body>
+
+    
+    <script>
+    
+        
+        $(function(){
+            
+        //parent : for a single level choice....if we have multiple elements having the same parent id we can choose which parent element of type to be editing
+
+        //parents : for all levels up to the root element or up to specific element
+       
+        //parentsUntil : for all levels up to specific element but this specific element will not be included in the editing
+        
+        //children :  for a single level choice .. it will choose all children for an element
+        
+        //siblings: a single level choice .. editing sibling for an element but that element will not be included .. can't go out the boundreies of the parent    
+
+            
+        //find : will find / select what we want within the bounderies of an element .. and whether this element is not a parent or a children 
+        
+        //find : starts from an element and goes down until find our selection..it doesn't matter if that selection is a parent or children 
+            
+       
+        //next-nextUntil-nextAll-prev-prevUntil-prevAll        
+//next:choose the first siblings for an element
+//nextUntil:choose all siblings until a specific element this element will not be included
+//nextAll:choose all siblings for an element
+
+            
+            
+            
+            
+            //editing the container only 
+            /*
+            $('#div1').parent().css({
+                borderWidth:"2px",
+                borderStyle:'dotted',
+                borderColor:"red"
+                //border:'2px dotted red'
+              });
+             */
+            
+            
+            
+            
+            
+            //.container has only direct one children 'div1'..any element below 'div1' is not a children of .container
+            /*
+            $('.container').children().css({
+                fontSize:'25px',
+                color:'red',
+                border:"2px solid #ff2700"
+            })
+            */
+           
+            
+           
+            //editing the ul only ...any element below ul is not a children of #div1
+             /*
+            $('#div1').children().css({
+                borderWidth:'2px',
+                borderStyle:'solid',
+                borderColor:'#ff2700'
+                //border:"2px solid #ff2700"
+            })
+             */
+            
+           
+            
+            
+            
+            //editing ALL children of #span1 ...any element sepreated and below the level of #span1 will not be editing because it's not a children
+            /*
+            $('#span1').children().css({
+                color:'#fff',
+                border:'2px solid #ff00b1'
+            })
+            */
+           
+            
+            //editing ALL paragraph children of #span1
+            /*
+            $('#span1').children('p').css({
+                color:'#fa0a0a',
+                border:'4px dotted #1d1f1e'
+            })
+           */
+            
+            
+            
+           //if we have multiple parent with the same name 
+            //this will select the first #parentX and any element with the same id will not be included ...to choose all element with the same id we put * astreic before #
+            //editing all childrens for the first #parentX
+            /*
+            $('#parentX').children().css({
+                color:'#fa0a0a',
+                border:'4px dotted #1d1f1e'
+            })
+            */
+            
+            
+            
+            
+            
+            
+            
+            //editing all childrens for the all elements with id #parentX
+           /*
+            $('*#parentX').children().css({
+                color:'#fa0a0a',
+                border:'4px dotted #1d1f1e'
+            })
+            */
+            
+            
+             
+             
+           
+            
+            //editing specific children  element of #span1
+            /*
+            $('#span1').children('#specific1').css({
+                 color:'#fa0a0a',
+                border:'4px dotted #1d1f1e'
+            })
+           */
+            
+            
+             
+            
+            
+            //for the first id #only without astreic * 
+            //editing first span's parent 
+            /*
+            $('#only').parent().css({
+                 color:'#fa0a0a',
+                border:'4px dotted #1d1f1e'
+            })
+            */
+            
+            
+            //for any element with id #only we put astreic * before #
+            //editing 'every' parent for #only
+            /*
+             $('*#only').parent().css({
+                 color:'#fa0a0a',
+                border:'4px dotted #1d1f1e'
+            })
+           */
+            
+            
+            
+           
+            
+            //editing all parents until the root element ..that will include .container class 'both containers'  and will include body tag
+            /*
+            $('#only').parents().css({
+                 color:'#0afa54',
+                border:'4px dotted #ff01b1'
+            })
+           */
+            
+            
+            
+           
+            
+            
+            //let's look at the above container
+            //editing all parents of the #specific1  up  to the container and root element which is the body
+            /*
+            $('#specific1').parents().css({
+                color:'#0afa54',
+                border:'2px dotted white'
+            })
+            */
+            
+            
+           
+            
+            //parentsUntil it chooses the in between 
+            //editing parent of #specific1 and span1 and li 
+            // but ul will not be included 
+            /*
+            $('#specific1').parentsUntil('ul').css({
+                color:'#0afa54',
+                border:'2px dotted white'
+            })
+            */
+           
+            
+            
+            
+           
+            
+             //editing parent of #specific1 and span1 and li and ul
+            // but #div1 will not be included 
+            /*
+            $('#specific1').parentsUntil('#div1').css({
+                color:'#0afa54',
+                border:'2px dotted white'
+            })
+           */
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+           
+            //find
+            //looks like a children but it searches all the elments 'down' to the end
+            
+            
+            //any span in this section is not a child for #div1
+            //find allows us to edit any element within a specific element
+            //editing all spans within #div1
+            /*
+            $('#div1').find('span').css({
+                color:'#fff',
+                border:'2px dotted #fa1313'
+            })
+            */
+            
+            
+            
+            
+           
+            
+            
+            
+            
+           
+            
+            
+            
+            
+           
+            
+            
+            
+            
+           
+            
+            
+            
+           
+            
+        })
+        
+        
+        
+    
+    </script>
+
+
+
+
+
+
+</html>

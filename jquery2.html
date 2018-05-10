@@ -1,0 +1,389 @@
+<!doctype HTML>
+<html>
+    <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    </head>
+    
+    <style>
+        .blue{
+            background-color: #6868ff;
+            color: #fff;
+            font-weight: bold;
+        }
+        
+        .dots{
+            border: 1px dotted red;
+            background-color: antiquewhite;
+        }
+        
+    </style>
+    <body>
+        
+        
+        <h2 id="h01" class="head1" > this is heading</h2>
+        
+    <p id="p01" class="para1">this is a paragraph </p>
+     
+        <img src="https:\\www.placehold.it\150" id="img01" class="photo1">
+        
+         <p id="p02" class="para2">paragraph with css addClass by jQuery</p>
+       
+        
+             
+    <p id="p02">select me mr.jquery</p>
+    <p id="p02">select me mr.jquery</p>
+    <p id="p02">select me mr.jquery</p>
+    <p id="p02">select me mr.jquery</p>
+   
+        
+        <div id="d1">
+            <p> mouseenter 'world' below</p>
+            <p id='p03'>hello <span id='sp1'>world</span> ???</p>
+        </div>
+        
+        
+        
+        
+        <div id="circle" style="width:50px;height:50px; border-radius:50%;background-color: aqua"></div>
+        
+    </body>
+    
+    <script>
+       
+       
+        
+         
+       $(document).ready(function(){
+             
+            
+           //querySelector   selects the first element only (tag,class,id)
+           
+           //in jquery $('#id') $('.class') will choose the first element and will not choose any other if it matchs the conditions
+           
+           
+           //querySelectorAll selects all elements
+           //to choose all elements with jquery we put * astreic before the selector
+           //$('*#id') $('*.class') 
+           
+           
+   //Exception:only $('tag') will choose all elements without the need for * astreic
+
+           
+           
+           /*
+           $('*#p02').on('click',function(){console.log('hey')})
+           */
+           
+            
+           
+           
+           
+           //jquery accessing sub-elements
+           
+           /*
+           $('#d1 #p03 #sp1').on('mouseenter',
+            function(){ $(this).fadeOut(1000).fadeIn(1000) } )
+           */ 
+           
+            
+           
+            
+           
+           
+           
+         //jQuery support chaning
+           
+           
+           
+        /*     
+      $("#h01,.para1").on("click",function(){
+         $("#img01").fadeOut(1000).delay(1500).fadeIn()     //hide then wait then show
+          //fadeIn: show with animate within 1000ms ...fadeOut: hide with animate
+      })  
+      */        
+             
+          
+          
+             /* 
+      $("#h01").on("click",function(){$(".photo1").toggle(1000); })  
+        // toggle :if showen then hide it...if hidden then show it
+        // 1000 ms = 1 sec
+           */
+      
+         
+         
+          /*
+       $("#h01").on("click",function(){$(".photo1").slideToggle(1000);}) 
+        //slideToggle=toggle :if showed hide it...if hidden show it
+        // 1000 ms = 1 sec
+          */
+          
+          /*
+          //chaning html and css
+         $("#img01").on("mouseout",function(){
+             $(".para1").html('this is new paragraph by jQuery').css({color:'red'})
+         })
+         */
+         
+         
+          
+         
+       
+         
+          
+          
+          
+      //some animations can be work without passing time
+      //be focues what animation comes first
+
+          
+          
+          
+          
+          /*
+          
+         $(".head1").on("click", function(){
+             
+         // $('#img01').slideUp(200).delay(500).slideDown(200);
+             
+             
+             
+        //$('#img01').slideDown(200).delay(500).slideUp();
+        
+        //on first click slidDown means its already down then delay then slidUp forever means it will not be shown again 
+        //unless if we click again after execute the origina query above it will slidDown then delay then slidUp forEver 
+             
+             
+             
+         //$('#img01').hide(700).delay(1500).show(700); //hide within 700ms then delay for 1500ms then show within 700ms
+         
+             
+             
+        //$('#img01').hide(700).delay(1500).show();
+        //hide then delay but it will not show again because we didn't pass time for showing 
+            
+             
+             
+         //$('#img01').hide().delay(1500).show(0); 
+         //on each click hide then delay then show
+             
+             
+         })
+         
+         */
+         
+         
+         
+         
+        
+         
+         
+         
+        
+         
+         
+         
+       
+         
+        
+         
+         
+         
+        
+         
+         
+         
+        
+         
+         
+         
+         //animate and addClass
+          
+          /*
+         $("#p02").hide(500).fadeIn(2000,function(){
+             $(this).addClass('blue');  // $("#p02").addClass('blue');
+             //vanilla js: p02.classList.add('blue');
+         })
+         */
+          
+          /*
+         $("*#p02").on('click',function(){$(this).addClass('dots'); callBack(); }) ;
+          function callBack(){$('#d1 #p03 #sp1').css({color:'red',fontSize:"20px"});
+                              $('#d1 #p03 #sp1').fadeOut(2000).fadeIn(3000);}
+          
+          */
+          
+          
+          
+           
+          
+          
+          
+          
+          
+          
+          
+          
+          //animate #p02 but when we click on the photo stop animating #p02
+           
+           /*
+          $("#p02").hide(500).fadeIn(2000,function(){
+             $(this).addClass('blue');  // $("#p02").addClass('blue');
+         })
+          
+          $("#img01").on("click",function(){
+              $("#p02").stop();
+          })
+          */
+         
+          
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         // .animate
+          
+          
+          //in jQuery we can only animate any numeric values such width , margin , padding , opacity...etc......we can use px and %
+          // color,background,fontFamily can be changed using .css({}) method 
+          // we can't change color,background,fontFamily by animate method
+          
+          
+             /*
+          //when we click on #p01 animate #p01....then a callback function
+          $("#p01").on("click",function(){
+              $("#p01").animate(
+            {marginLeft:"50px",opacity:"0.4"},2000,"linear",function(){alert("hi")}  )
+          })
+             */ 
+          
+          
+          
+          /*
+          $("#h01").on("mouseenter",function(){
+  $("#img01").animate({width:"400"},1000,"linear",function(){$(this).after("<div>animate done</div>")})//$("this")  refers to #img01 
+          })
+         */
+         
+         
+
+          //we can add multiple animate for the same selector
+           /*
+          //this refers to $("#h01")
+         $("#h01").on("click",function(){
+             $(this).animate({width:"300",height:"200px"},500,"linear")
+             $(this).animate({fontSize:"30px"},function(){alert("hi")})
+             $(this).animate({opacity:"0.6"},1000,"swing",function(){alert("xxxxx")})
+             $(this).animate({paddingTop:"10%"})
+         })
+           */
+         
+          
+          
+          //mix html and css inside jQuery
+          //by clicking on h01 we will animate h01 and img01
+           
+           
+           /*
+           //we can't do "click" for both events
+           
+           $('#p01').on( 'click',function(){ 
+               $('#p01').before("<span style='color:red;font-size:30px'>hello</span>") 
+           } )
+          
+           
+          $('#p01').on( 'mouseenter',function(){ 
+              $('#p01').after("<span style='color:aqua;font-size:50px'>hi</span>")
+          } )
+            */  
+              
+           
+           /*
+          $("#h01").on("click",function(){
+             $(this).animate({opacity:"0.6"},1000,"swing") //this refers to #h01
+             $("#img01").animate({paddingTop:"10%"},function()
+                                 {
+                                $(this).after("<span style='font-size:30px;color:red;'>done</span>") //this refers to #img01})
+                                 }
+                                )
+          }
+          )
+         */
+          
+         
+         
+         
+         
+          
+         
+           //making something after/before animate
+           
+           /*
+           $('#circle').on('click',function(){
+               $('#circle').animate(
+           {marginLeft:'50px'},1000,"linear",$('#circle').after(function(){alert('hey')}) 
+           )
+
+           })
+           */
+         
+         /* 
+ //we can only animate properties with numbers...so color and backgroundColor cannot be animated
+            $('#circle').on('click',function(){
+               $('#circle').animate(
+           {marginLeft:'50px',color:'red'},1000,"linear"
+           ).after(function(){alert('hey')})
+
+           })
+           */
+         
+         
+         
+         
+         
+         //multiple animations
+         
+         /*
+          $('#circle').on('click',
+            function (){
+            $('#circle').animate({width:"80px"})    
+            $('#circle').animate({marginLeft:"+=50px",height:'80px'})    
+            $('#circle').animate({marginTop:"+=50px"})    
+            $('#circle').after('<p>good animation bro!</p>')
+            $('#circle').css({backgroundColor:'red'})
+                }         
+                 )
+         */
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+        });
+            
+        
+            
+        
+            
+        
+            
+        
+    </script>
+    
+    
+     
+    
+    
+</html>

@@ -1,0 +1,152 @@
+<!doctype HTML>
+<html>
+    <head>
+<meta charset="utf-8">    
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    </head>
+
+    <style>
+    
+        .class1{background-color: cornflowerblue; color: #fff; font-weight: 800;}
+        
+        .class2{background-color: aquamarine; color: #fff; font-weight: 900;}
+        
+        .beautify{background-color: dimgray; color: #fff;}
+    </style>
+    
+    <body>
+    
+        <div id="d1">
+            <p> love me like you do </p>
+             <p> what you waiting for</p>
+        </div>
+        <br>
+        <div id="d2">
+            <p>let's add a class using jquery</p>
+            <p>let's remove the previous class with jquery</p>
+        </div>
+       <br>
+        <div id='d3'>
+            <p>i'm back like i never left</p>
+            <p>be ready for the impact</p>
+        </div>
+        
+        
+        <div id="d4" class="beautify">
+            <p>hasClass is a Jquery function to check if an element has a specific class or not</p>
+        </div>
+        
+        
+    </body>
+
+    
+    <script>
+    
+        
+        $(function(){
+            
+            
+            
+             
+            
+            
+            //toggleClass
+            
+            /*
+      //toggleClass .....if the class is hidden ->show it..if the class is showen->hide it
+        $('#d1').on('click',function(){
+            $('#d1').toggleClass('class1');
+         })
+            */
+            
+            
+            
+            
+            
+            
+            
+            
+            //addClass...removeClass
+            /*
+            $('#d2').on('mouseenter',function(){
+                $('#d2').addClass('class2');
+            })
+            
+            $('#d2').on('mouseout',function(){
+                $('#d2').removeClass('class2');
+            })
+            */
+            
+            
+            
+            
+            
+            
+            
+            //add css with vanilla JS
+            /*
+            var d=document.getElementById('d3');
+            d.setAttribute('style','background-color:aqua;  color:black; border:2px solid black; ')
+            */
+             
+            
+            
+            
+            //try to decrease usage of adding css with jQuery
+             
+            /*
+            $('#d3').on('click',function(){
+                //css properties typed in an object form with camelCase
+                $('#d3').css( 
+                    {
+                    backgroundColor:'aqua',
+                    color:'black',
+                    border:'1px solid black',
+                    } 
+                )
+            })
+            */
+            
+            
+            /*
+              $('#d3').on('click',function(){
+                $('#d3').css('background-color','aqua');
+                $('#d3').css('color','black');
+                $('#d3').css('border','1px solid black');
+            })
+            */
+            
+            
+            
+            /*
+            $('#d4').on('click',function(){
+                console.log($('#d4').hasClass('beautify'));     //output:true
+                
+                //$('#d4').removeClass('beautify'); //console.log($('#d4').hasClass('beautify'));     //output:false
+             })
+            */
+            
+           
+            
+           
+            
+          
+           
+            
+           
+            
+           
+            
+        })
+        
+        
+        
+    
+    </script>
+
+
+
+
+
+
+</html>

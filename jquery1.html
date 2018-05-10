@@ -1,0 +1,336 @@
+<!doctype HTML>
+<html>
+    <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    </head>
+    
+    <body>
+        
+    <p id="p01">hover over a paragraph </p>
+    
+      <div id="bullshit">
+        <p>so what i'm leaving and i will not coming back</p>
+          <p>do it if u can</p>
+        </div>  
+        
+        
+        <button class="btnX" id="btnY">click gray body AND mouseenter for blue paragraph p01</button>
+        
+        
+        
+        <input type="text" id="inp02">
+    </body>
+    
+    <script>
+    
+        
+        //2 ways to write ur jquery 
+        
+        //first way if the document is ready ..completely loaded
+        /*
+        $(document).ready( function(){
+            $('tag .className #idName ').event( function(){.....} )
+         });
+        */
+        
+        
+        //a shortcut for the above way ..created by jquery Team
+        /*
+        $(function(){
+            $('tag .className #idName ').event( function(){.....} )
+        });
+        */
+        
+///////////////////////////////////////////////////////////////////////////////////
+        
+        
+        //second way to declare/write jquery
+
+        
+        
+        $(document).ready(function(){
+            
+            
+            
+            
+          //turn all paragraphs to bold , red 
+         
+            /*
+           $("p").click(function(){
+               console.log("jquery good")
+               $("p").css({color:'red',fontWeight:"bold" })
+           }) 
+            */
+            
+            /*  
+           $("p").on("click",function(){
+               console.log("jquery good")
+               $("p").css({color:'red',fontWeight:"bold" })
+           }) 
+            */
+           
+           
+           
+           
+            //change body backgroundColor
+            
+           /*
+           $(".btnX").click(function(){
+               $("body").css({backgroundColor:"#ccc"})
+           })
+           */
+      
+        
+            
+            
+             
+            
+            
+            
+                
+        //Jquery support mix / match of two different selectors
+        //vanilla JS : var x=document.querySelectorAll('.c','#i');
+
+        /* 
+        $("selector, selector").click(function(){
+            $("selector").css({backgroundColor:"#ccc"})
+           }) 
+        */
+            
+            
+            
+     
+            
+            /*
+            // a mix of .btnX class and p tag
+            $(".btnX, p").click(function(){
+               $("body").css({backgroundColor:"#ccc"})
+           })
+           */
+            
+            /*
+             // a mix of .btnX class and btnY id
+            $(".btnX, #btnY").click(function(){
+               $("body").css({backgroundColor:"#ccc"})
+           })
+            */
+            
+            
+            
+            
+            
+         //Jquery events : click, dbclick , hover ,mouseout ,mousedown , mouseenter , mouseleave ,.....and so much more
+            
+           /*  
+            $('#bullshit').mouseout(function(){
+     //$('#bullshit').fadeOut(800);         //hide forever..800 milisecon
+     //$('#bullshit').fadeIn(1000);         //show again..1000 milisecon
+     //$('#bullshit').fadeToggle(950);      //hide and show in the same time..950MS 
+     //$('#bullshit').slideDown(600);       //hide and show in the same time..600 MS  
+     //$('#bullshit').slideUp(600);         //hide and show in the same time..600 MS  
+     //$('#bullshit').toggle(600);          //if hidden show it..if appeared hide it
+                
+        })
+          */
+            
+            
+            
+            
+            
+            //what event to do first
+            
+             
+            
+            /*
+    $('.btnX,#btnY').mouseenter(function(){
+    $("p").css({color:"aqua",fontSize:"10px"})   //all p will be brown
+    $("#p01").css({color:"blue",fontSize:"30px"}) // p with id #p01 will be blue
+              })
+            */
+            
+                        
+                        
+                        
+                        
+            /*
+            $('.btnX,#btnY').mouseenter(function(){
+    $("#p01").css({color:"blue",fontSize:"30px"}) //it will be canceled because in the next query all p will be brown 
+    $("p").css({color:"brown",fontSize:"10px"})    
+              })
+            */
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+           //do something for only one time
+           //the last function will be executed ..as we saied before choose what to do
+          
+           /*
+         $("#p01").one("click",
+                function(){ console.log("hi hover and click")}  
+                ,
+                function(){ console.log("bye hover and click")}
+                )
+            */
+             
+            
+             
+            
+            
+            
+            
+            
+            
+            
+            
+            //two functions seperated
+            
+             
+             
+            
+            //from previous part we worked with "what function to be executed first"
+            //there's some events that have an oppisite behaviour
+            //such as  hover
+            
+            
+             /*
+            $("#p01").hover(
+                function(){ console.log("hi hover")}  //when hover
+                ,
+                function(){ console.log("bye hover")} //when hover ends
+                )
+             */
+            
+          
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+        
+           //add multiple events 
+
+            
+            
+            
+            /*
+           
+          //the last function will be executed..as we saied before choose what to do
+          //when 'mouseleave' or 'click'  do the same thing     
+         $("#p01").on("mouseleave click",
+                function(){ console.log("hi hover and click")}  //this will not executed
+                ,
+                function(){ console.log("bye hover and click")} //last function will be executed
+                )
+          */  
+        
+
+            
+            
+            
+            /*
+            //the next code is totaly different than the above 
+            //when 'mouseenter' do something but when 'mouseout' do something else
+            //object form 
+          $("#p01").on( 
+            {
+           "mouseenter":function(){ console.log("hi hover and click")}    
+            ,
+           "mouseout":function(){ console.log("bye hover and click")}  
+            }
+              )
+            */   
+            
+             
+            
+            
+             
+            
+            
+            /*
+            $("#inp02").on("focus",
+                 function(){console.log("you focuse on the X zone")}
+                   )
+             
+            //$("#inp02").change(function(){....})      it's ok to do this too
+            $("#inp02").on("change",
+                 function(){console.log("you change the X zone")}
+                   ) 
+            */
+                
+            
+         
+             
+         
+        })
+            
+             
+   //////////////////////////////////////////////////////////////////////////          
+        
+        
+        
+        
+        
+        //second way to declare/write jquery
+        
+       // $(function() { you can add ur query inside here } )
+        $(function(){
+            
+               
+            
+            /*
+             $("#inp02").on("mouseenter click",
+                 function(){console.log("you entered the X zone")}
+                   )
+             */
+             
+             
+             
+            
+            
+             /*
+            $("#inp02").on("mouseleave",
+                 function(){console.log("you left the X zone")}
+                   )
+            */
+            
+            
+            
+            /*
+              $("p").click(function(){
+               console.log("jquery good")
+               $("p").css({color:'red',fontWeight:"bold" })
+           }) 
+             */ 
+              
+              
+         });  
+              
+        
+    </script>
+    
+    
+     
+    
+    
+</html>

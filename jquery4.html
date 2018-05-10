@@ -1,0 +1,238 @@
+<!doctype HTML>
+<html>
+    <head>
+        <meta charset="utf-8">    
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    </head>
+    
+     
+    <body>
+    
+        <p id="p1">
+            it's good to be with you
+            <a href="https:\\www.google.com.eg" id="link1">google website</a>
+            you are a good JSscripter
+        </p>    
+        
+        <p id="p2">can you change me with text function</p>
+        
+        
+        <p id="p3">can you change me with html function</p>
+        
+        
+        <p id="p4">
+            can you change me with attr function
+    <a href="https:\\www.facebook.com" id="link2">facebook website</a>
+          </p>
+        
+        
+        <input id='inp1' type="text" placeholder="type a name" style="display: block;">
+        <br>
+        <input type="text" placeholder="type a name" style="display: block;">
+        <br>
+        <input type="text" placeholder="type a name" style="display: block;">
+        <br>
+        <input type="text" placeholder="type a name" style="display: block;">
+        
+        
+    </body>
+    
+    
+    <script>
+        
+        
+        
+        $(function(){
+            
+           
+        //set get is techniques not a specific functions 
+        
+        //html val text  attr    are functions()...if the brackets are empty means get..if we type something means set 
+        
+        //they came with a callback function index and text-content    
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            //get
+            
+            
+            
+
+
+        /*
+        $('#p1').on('click',function(){ 
+        console.log($('#p1').html());
+        })
+         */
+
+
+        /*
+        $('#p1').on('click',function(){ 
+        console.log($('#p1').text());
+        })
+        */
+
+
+
+        /*
+        $('#p1').on('click',function(){ 
+        console.log($('#link1').attr("href"));
+        })
+        */
+
+
+
+
+            /*
+        $('input').on('click',function(){ 
+        console.log($('input').val());   //type something then click and see the console
+        })
+        */
+
+ 
+           
+            
+            /*
+        //get all paragraphs texts   
+        $('p').on('click',function(){
+            console.log($('p').text(),'\n')
+        })    
+         */   
+         
+        
+            
+            
+            
+            
+        
+        
+        
+        
+            
+        //set
+            
+            
+            
+                /*
+          var newText='hello i can change it';
+        $('p').on('click',function(){
+            //get index and content
+            $('p').text( function(idx,oldText){  
+                    // set/add  with return
+                  return  'p'+idx+' oldText:'+oldText+'  '+'newText:'+newText+'  ';
+            })
+            
+         })
+        */
+        
+            
+            
+            
+            
+           //in vanilla JS
+    /*
+    //var p=document.getElementById('p2');
+    //p.onclick=function(){  p.textContent="change with vanilla JS";  } 
+    //or
+    //p.addEventListener('click',function(){ p.textContent="change with vanilla JS"; })
+    */
+            
+            
+            
+            
+            /* 
+         $('#p2').on('click',function(){
+              $('#p2').text('i can change you with text')
+         })   
+           */ 
+            
+            
+            
+            
+            
+            
+            
+      //in vanilla JS
+      /*      
+var p=document.getElementById('p3');
+//p.onclick=function(){ p.innerHTML='<p>change using <b>HTML</b></p>'; }
+//or
+//p.addEventListener('click',function(){ p.innerHTML='<p>change using <b>HTML</b></p>'; })
+    */
+            
+            
+            
+            /*
+            $('#p3').on('click',function(){
+                $('#p3').html('<p>change using <b>HTML</b></p>')
+            })
+            */
+            
+            
+            
+            
+            /*
+     //click on p4 first ..href will change ..but the name of the link will not change 
+           $('#p4').on('click',function(){
+             $('#link2').attr('href', 'https:\\www.google.com.eg ')
+            })
+            */
+            
+            
+            
+            
+             /*
+            $('#inp1').on('click',function(){
+                $('#inp1').val('khaled adel');
+            })
+             */
+            
+            
+            
+            
+            
+            /*
+            $('input').on('click',function(){
+                //get index and old content of each input
+                $('input').val(function(idx,oldVal){
+                        if(idx==0) return 'khaled';
+                        if(idx==1) return 'adel';
+                        if(idx==2) return 'mahmoud';
+                        if(idx==3) return 'elazaab';
+                 })
+            })
+            */
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+        })
+
+        
+        
+        
+        
+    </script>
+    
+    
+    
+</html>
